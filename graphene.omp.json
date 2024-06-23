@@ -1,5 +1,5 @@
 {
-  "$schema": "",
+  "$schema": "https://raw.githubusercontent.com/FallingSky65/graphene.omp/main/graphene.omp.json",
   "palette": {
     "black": "#000000",
     "white": "#ffffff",
