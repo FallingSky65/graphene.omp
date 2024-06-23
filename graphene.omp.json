@@ -1,0 +1,111 @@
+{
+  "$schema": "",
+  "palette": {
+    "black": "#000000",
+    "white": "#ffffff",
+    "red": "#b52121"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "p:red",
+          "foreground": "p:white",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "<p:red,p:black>\ue0b0</>",
+          "style": "diamond",
+          "template": "\udb82\udcc7",
+          "type": "os"
+        },
+        {
+          "background": "p:red",
+          "foreground": "p:white",
+          "leading_diamond": "<p:black,p:red>\ue0b0</>",
+          "trailing_diamond": "<p:red,p:black>\ue0b0</>",
+          "style": "diamond",
+          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "background": "p:red",
+          "foreground": "p:white",
+          "leading_diamond": "<p:black,p:red>\ue0b0</>",
+          "trailing_diamond": "<p:red,p:black>\ue0b0</>",
+          "properties": {
+            "style": "full"
+          },
+          "style": "diamond",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "p:red",
+          "foreground": "p:white",
+          "leading_diamond": "<p:black,p:red>\ue0b0</>",
+          "trailing_diamond": "<p:red,p:black>\ue0b0</>",
+          "style": "diamond",
+          "type": "git"
+        },
+        {
+          "background": "p:red",
+          "foreground": "p:white",
+          "leading_diamond": "<p:black,p:red>\ue0b0</>",
+          "trailing_diamond": "<p:red,p:black>\ue0b4</>",
+          "properties": {
+            "always_enabled": true,
+            "display_exit_code": true
+          },
+          "style": "diamond",
+          "template": " {{ if gt .Code 0 }}\uf00d {{ reason .Code }}{{ else }}\uf00c{{ end }}",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "p:red",
+          "foreground": "p:white",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "<p:red,p:black>\ue0b4</>",
+          "properties": {
+            "always_enabled": true,
+            "style": "austin",
+            "threshold": 500
+          },
+          "style": "diamond",
+          "template": "{{ .FormattedMs }}",
+          "type": "executiontime"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "properties": {
+            "always_enabled": true
+          },
+          "background": "p:black",
+          "foreground": "p:red",
+          "style": "plain",
+          "template": "\udb80\udd42",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2,
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "p:red",
+    "template": "\udb80\udd42 "
+  }
+}
